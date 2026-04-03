@@ -93,12 +93,12 @@ jobs:
           dependencies
           automated
 
-      - name: Enable Auto-Merge
-        if: steps.check.outputs.update_needed == 'true' && steps.create-pr.outputs.pull-request-number
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --repo "$GITHUB_REPOSITORY" --auto --squash --delete-branch
+    - name: Enable Auto-Merge
+      if: steps.check.outputs.update_needed == 'true' && steps.create-pr.outputs.pull-request-number
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --repo "$GITHUB_REPOSITORY" --auto --squash --delete-branch
 
     - name: Summary
       if: always()
