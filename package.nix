@@ -10,7 +10,7 @@
 }:
 
 let
-  version = "1.4.1";
+  version = "1.4.2";
 
   platformMap = {
     "aarch64-darwin" = "darwin-arm64";
@@ -22,10 +22,10 @@ let
   platform = platformMap.${stdenv.hostPlatform.system} or null;
 
   nativeHashes = {
-    "darwin-arm64" = "1k344hnlmjya1d81a26msymd1sk142narp17j9d9wrpxbzfrd66n";
-    "darwin-x64" = "1wz5j7vxbwxc1mg8pgzzh9pndj8hmn59sj68dnk8mplbfyg1x44y";
-    "linux-x64" = "1hyn8qa6b1b7qyhzf3mai2ivb0s4gqrgh96qlp0lfs6hh0rh49vb";
-    "linux-arm64" = "12ac3xxqrbysky2n6b4h6pr80pfx8px9f5iff94dvbsiyi3gw7q4";
+    "darwin-arm64" = "0y2cvm25302m3xwr8gm1iy09hdwh65j4sdf51j47cf06x25sr28w";
+    "darwin-x64" = "1wahbwnsv7b9ism7zsdlr6464nfirgigwbsdf4zabvlrnsclfgcl";
+    "linux-x64" = "1r27d1cml7rf1k898pw5870lmr69vx115q4x0b7vrdqms3prv0bw";
+    "linux-arm64" = "0zp1av6mdmppin36zqhwcii8d753paaj56dq4bawj5ps31ak1by2";
   };
 
   extension = if stdenv.hostPlatform.isDarwin then "zip" else "tar.gz";
