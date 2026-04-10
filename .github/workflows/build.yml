@@ -30,7 +30,7 @@ jobs:
       env:
         NIX_FIRST_BUILD_UID: 400
 
-    - uses: cachix/cachix-action@v15
+    - uses: cachix/cachix-action@v17
       if: github.ref == 'refs/heads/main'
       with:
         name: opencode-cli-nix
